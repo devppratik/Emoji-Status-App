@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">EmojiStatus</string>
+    <string name="logout">Logout</string>
+    <string name="edit">Edit</string>
+    <string name="set_new_status">Set New Status</string>
+    <string name="emoji_status">Emoji Status</string>
+    <string name="say_what_you_are_thinking_with_an_emoji">Say what you are thinking with an Emoji😎</string>
+</resources>
