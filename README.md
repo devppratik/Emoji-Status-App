@@ -11,11 +11,11 @@ Current Features
 - Update/Create your Status
 - View all status of other people
 
-Other Changes
-- Better UI
+Future Changes
 - More Emojis Support
 - Other Ways to SignUp
 
 ## Screenshots
-![Screenshot_20210206_015912](https://user-images.githubusercontent.com/56730201/107087607-b1bb8c80-6821-11eb-93a9-295e2257b5bc.png)
-![Screenshot_20210206_015928](https://user-images.githubusercontent.com/56730201/107087612-b2ecb980-6821-11eb-972a-ea39a5ee3fdd.png)
+![Screenshot_20210207_004016](https://user-images.githubusercontent.com/56730201/107128135-40431300-68e1-11eb-8327-cdf61786f692.png)
+![Screenshot_20210207_004804](https://user-images.githubusercontent.com/56730201/107128136-41744000-68e1-11eb-8772-a7e17212b57f.png)
+![Screenshot_20210207_010405](https://user-images.githubusercontent.com/56730201/107128137-41744000-68e1-11eb-95af-5b48f438390f.png)
