@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
@@ -47,6 +48,7 @@ class MainActivity : AppCompatActivity() {
     }
     private lateinit var auth: FirebaseAuth
     private lateinit var rvUsers : RecyclerView
+    private lateinit var btnEdit : FloatingActionButton
     private val db = Firebase.firestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,6 +56,7 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
         rvUsers = findViewById(R.id.rvUsers)
+        btnEdit = findViewById(R.id.btnEdit)
         auth = Firebase.auth
 
         val query = db.collection("users")
@@ -63,6 +66,8 @@ class MainActivity : AppCompatActivity() {
         val adapter = EmojiStatusListAdapter(this, options)
         rvUsers.adapter = adapter
         rvUsers.layoutManager = LinearLayoutManager(this)
+        btnEdit.setOnClickListener {             Log.i(TAG, "Edit")
+            showAlertDialog() }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -77,9 +82,6 @@ class MainActivity : AppCompatActivity() {
             val logoutIntent = Intent(this, LoginActivity::class.java)
             logoutIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(logoutIntent)
-        }else if(item.itemId == R.id.miEdit){
-            Log.i(TAG, "Edit")
-            showAlertDialog()
         }
         return super.onOptionsItemSelected(item)
     }
@@ -122,7 +124,7 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
             val currentUser = auth.currentUser ?: return@setOnClickListener
-            db.collection("users").document(currentUser.uid).update("emojis", emojisEntered)
+            db.collection("users").document(currentUser.uid).update("emojis", emojisEntered, "updatedAt", System.currentTimeMillis())
             dialog.dismiss()
         }
     }

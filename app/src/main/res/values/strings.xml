@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">EmojiStatus</string>
+    <string name="app_name">Emoji Status</string>
     <string name="logout">Logout</string>
     <string name="edit">Edit</string>
     <string name="set_new_status">Set New Status</string>
